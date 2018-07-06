@@ -1,0 +1,170 @@
+// Part of DTSource. Copyright 2006. David Adalsteinsson.
+// see http://www.visualdatatools.com/DTSource/license.html for more information.
+
+#include "DTTransform2D.h"
+#include "DTVector2D.h"
+#include "DTError.h"
+#include "DTDoubleArray.h"
+#include "DTFloatArray.h"
+
+
+DTTransform2D::DTTransform2D()
+{
+    T11 = 1.0; T12 = 0.0; S1 = 0.0;
+    T21 = 0.0; T22 = 1.0; S2 = 0.0;
+}
+
+DTTransform2D::DTTransform2D(double t11,double t12,double s1,
+                             double t21,double t22,double s2)
+{
+    T11 = t11; T12 = t12; S1 = s1;
+    T21 = t21; T22 = t22; S2 = s2;
+}
+
+void DTTransform2D::pinfo() const
+{
+    std::cerr << T11 << ", " << T12 << ", " << S1 << "\n";
+    std::cerr << T21 << ", " << T22 << ", " << S2 << "\n";
+}
+
+double DTTransform2D::operator()(int i,int j) const
+{
+    if (i<0 || j<0 || i>2 || j>2) {
+        DTErrorMessage("DTTransform::operator(i,j)","Index out of bounds");
+        return 0.0;
+    }
+    
+    double toReturn = 0.0;
+    switch (i+j*3) {
+        case 0:  toReturn = T11; break;
+        case 1:  toReturn = T21; break;
+        case 2:  toReturn = 0.0; break;
+        case 3:  toReturn = T12; break;
+        case 4:  toReturn = T22; break;
+        case 5:  toReturn = 0.0; break;
+        case 6: toReturn =  S1; break;
+        case 7: toReturn =  S2; break;
+        case 8: toReturn = 1.0; break;
+        default: toReturn = 0.0; break;
+    }
+    
+    return toReturn;
+}
+
+DTTransform2D DTTransform2D::operator*(const DTTransform2D &T) const
+{
+    return DTTransform2D(T11*T.T11+T12*T.T21,
+                         T11*T.T12+T12*T.T22,
+                         T11*T.S1 +T12*T.S2+S1,
+                         T21*T.T11+T22*T.T21,
+                         T21*T.T12+T22*T.T22,
+                         T21*T.S1 +T22*T.S2+S2);
+}
+
+bool DTTransform2D::IsOrthogonal() const
+{
+    if (fabs(T11*T12 + T21*T22)<1e-15) {
+        double n1 = T11*T11 + T21*T21;
+        double n2 = T12*T12 + T22*T22;
+        return (fabs(n1-1.0)<1e-14 && fabs(n2-1.0)<1e-14);
+    }
+    else {
+        return false;
+    }
+}
+
+DTTransform2D DTTransform2D::Inverse() const
+{
+    // A*x + b = y
+    // So x = inv(A)*(y-b) = inv(A)*y - inv(A)*b
+    
+    double overallDet = T11*T22 - T12*T21;
+    
+    double t11 =  T22/overallDet;
+    double t21 = -T12/overallDet;
+    
+    double t12 = -T21/overallDet;
+    double t22 = T11/overallDet;
+    
+    double s1 = - (t11*S1 + t12*S2);
+    double s2 = - (t21*S1 + t22*S2);
+    
+    return DTTransform2D(t11,t12,s1,
+                         t21,t22,s2);
+}
+
+DTTransform2D DTTransform2D::Shift(const DTPoint2D &p)
+{
+    return DTTransform2D(1.0,0.0,p.x,
+                         0.0,1.0,p.y);
+}
+
+DTTransform2D DTTransform2D::Scale(double xs,double ys)
+{
+    return DTTransform2D(xs,0.0,0.0,
+                         0.0,ys,0.0);
+}
+
+DTMutableDoubleArray TransformPoints(const DTTransform2D &T,const DTDoubleArray &A)
+{
+    if (A.IsEmpty()) return DTMutableDoubleArray();
+    if (A.m()!=2 || A.o()!=1) {
+        DTErrorMessage("TransformPoints(Transform2D,DoubleArray","Invalid array size");
+        return DTMutableDoubleArray();
+    }
+    
+    size_t i,howMany = A.n();
+    DTMutableDoubleArray toReturn(2,howMany);
+    double x,y;
+    
+    double T11 = T(0,0);
+    double T21 = T(1,0);
+    double T12 = T(0,1);
+    double T22 = T(1,1);
+    double S1 = T(0,2);
+    double S2 = T(1,2);
+    
+    for (i=0;i<howMany;i++) {
+        x = A(0,i);
+        y = A(1,i);
+        toReturn(0,i) = T11*x+T12*y + S1;
+        toReturn(1,i) = T21*x+T22*y + S2;
+    }
+    
+    return toReturn;
+}
+
+void Read(const DTDataStorage &input,const std::string &name,DTTransform2D &toReturn)
+{
+    DTDoubleArray theArray = input.ReadDoubleArray(name);
+    if (theArray.Length()==0) {
+        toReturn = DTTransform2D();
+    }
+    else if (theArray.m()!=2 || theArray.n()!=3 || theArray.Length()!=6) {
+        DTErrorMessage("ReadFromArray(Transform2D)","Invalid size for array.");
+        toReturn = DTTransform2D();
+    }
+    else {
+        toReturn = DTTransform2D(theArray(0,0),theArray(0,1),theArray(0,2),
+                                 theArray(1,0),theArray(1,1),theArray(1,2));
+    }
+}
+
+void Write(DTDataStorage &output,const std::string &name,const DTTransform2D &theVar)
+{
+    DTMutableDoubleArray theArr(2,3);
+    for (int j=0;j<3;j++) {
+        for (int i=0;i<2;i++) {
+            theArr(i,j) = theVar(i,j);
+        }
+    }
+    output.Save(theArr,name);
+}
+
+void WriteOne(DTDataStorage &output,const std::string &name,const DTTransform2D &toWrite)
+{
+    Write(output,name,toWrite);
+    Write(output,"Seq_"+name,"2D Transform");
+    output.Flush();
+}
+

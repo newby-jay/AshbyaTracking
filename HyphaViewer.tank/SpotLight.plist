@@ -5,19 +5,36 @@
 	<key>String</key>
 	<string>text
 text
-text
-text
-text
-text
 GEMS
-nuclei
+text
+text
+text
+text
+text
+text
+text
+text
+text
+text
+text
+text
+text
+text
+log_{10}(D [\mu m^2/sec])
+log_{10}(D [\mu m^2/sec])
+log_{10}(D [\mu m^2/sec])
 mPa\cdot s
-Text
-\mu m^2/sec
 Text
 # per \mu m^3
 Text
+Text
 GEMS mobility [\mu m^2/s]
-distance from nuclei [\mu m]</string>
+distance from nuclei [\mu m]
+visc
+# per \mu m^3
+axial position [\mu m]
+Time [s]
+Count
+D [\mu m^2/s]</string>
 </dict>
 </plist>

@@ -11,13 +11,13 @@
 		<key>CurrentTime</key>
 		<dict>
 			<key>CurrentValue</key>
-			<real>23</real>
+			<real>0.0</real>
 			<key>MaxValue</key>
-			<real>31</real>
+			<real>18</real>
 			<key>MinValue</key>
 			<real>0.0</real>
 			<key>String</key>
-			<string>23</string>
+			<string>0</string>
 		</dict>
 		<key>Duration</key>
 		<string>20</string>
@@ -26,7 +26,7 @@
 		<key>Loop</key>
 		<string>On</string>
 		<key>TimeHint</key>
-		<real>1</real>
+		<real>0.0</real>
 		<key>TimeStep</key>
 		<string>1.0</string>
 		<key>TimeStepSwitch</key>
@@ -70,7 +70,7 @@
 			<key>Content</key>
 			<dict>
 				<key>Base</key>
-				<string>GEMS-Whi3dpQ-june7</string>
+				<string>GEMS-grace_dropletsAndNuclei/6_7_19_nucleiMarked/gems_</string>
 				<key>DT</key>
 				<string>1</string>
 				<key>Ending</key>
@@ -78,7 +78,7 @@
 				<key>ReturnFolder</key>
 				<string>Off</string>
 				<key>SubFolders</key>
-				<string>Off</string>
+				<string>On</string>
 			</dict>
 			<key>Selection</key>
 			<string>Folder Content</string>
@@ -98,10 +98,415 @@
 			<string>Divider</string>
 		</dict>
 		<dict>
+			<key>Content</key>
+			<dict>
+				<key>FirstVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>MESH SKELETONIZATION</string>
+				</dict>
+				<key>SecondVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>BYPASS Skelotonization</string>
+				</dict>
+				<key>Which</key>
+				<integer>1</integer>
+			</dict>
+			<key>Selection</key>
+			<string>Toggle</string>
+			<key>VariableName</key>
+			<string>REDO HYPHA MESH</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>FirstVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>nuclei source switcher</string>
+				</dict>
+				<key>SecondVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>NO NUCLEI</string>
+				</dict>
+				<key>Which</key>
+				<integer>0</integer>
+			</dict>
+			<key>Selection</key>
+			<string>Toggle</string>
+			<key>VariableName</key>
+			<string>NO NUCLEI switcher</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>FirstVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>Nuclei radius threshold</string>
+				</dict>
+				<key>SecondVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>No filtering</string>
+				</dict>
+				<key>Which</key>
+				<integer>0</integer>
+			</dict>
+			<key>Selection</key>
+			<string>Toggle</string>
+			<key>VariableName</key>
+			<string>Rmax switcher</string>
+			<key>VariableType</key>
+			<string>Real Number</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>FirstVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>track data with segments-retracked</string>
+				</dict>
+				<key>SecondVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>ground truth tracks (testing only)</string>
+				</dict>
+				<key>Which</key>
+				<integer>0</integer>
+			</dict>
+			<key>Selection</key>
+			<string>Toggle</string>
+			<key>VariableName</key>
+			<string>tracks switcher</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
 			<key>VariableName</key>
 			<string>DADivider - 31</string>
 			<key>VariableType</key>
 			<string>Divider</string>
+		</dict>
+		<dict>
+			<key>State</key>
+			<string>Open</string>
+			<key>Title</key>
+			<string>[SOURCE]</string>
+			<key>VariableName</key>
+			<string>DACollapser - 10</string>
+			<key>VariableType</key>
+			<string>CollapserOpen</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Application</key>
+				<string>$BUILD/Debug/meshGen</string>
+				<key>Argument</key>
+				<dict>
+					<key>Inline</key>
+					<dict>
+						<key>String</key>
+						<string></string>
+					</dict>
+					<key>SelectedNumber</key>
+					<integer>0</integer>
+				</dict>
+				<key>Communication</key>
+				<integer>1</integer>
+				<key>Input</key>
+				<string>Input.dtbin</string>
+				<key>ModuleName</key>
+				<string>Surface Mesh Round 1</string>
+				<key>Output</key>
+				<string>Output.dtbin</string>
+				<key>Project</key>
+				<string>meshSkel/meshGen/meshGen.xcodeproj</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>pointsWithSegments</string>
+						<key>Type</key>
+						<string>Array</string>
+						<key>Var</key>
+						<dict>
+							<key>Selected</key>
+							<string>points with segments mapped</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>fileBase</string>
+						<key>Type</key>
+						<string>String</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>String</key>
+								<string>text</string>
+							</dict>
+							<key>Selected</key>
+							<string>path</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>External Program</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
+			<key>VariableName</key>
+			<string>[SOURCE] SURFACE MESH ROUND 1</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Application</key>
+				<string>$BUILD/Debug/meshSkel</string>
+				<key>Argument</key>
+				<dict>
+					<key>Inline</key>
+					<dict>
+						<key>String</key>
+						<string></string>
+					</dict>
+					<key>SelectedNumber</key>
+					<integer>0</integer>
+				</dict>
+				<key>Communication</key>
+				<integer>1</integer>
+				<key>Input</key>
+				<string>Input.dtbin</string>
+				<key>ModuleName</key>
+				<string>Mesh Skeletonization</string>
+				<key>Output</key>
+				<string>Output.dtbin</string>
+				<key>Project</key>
+				<string>meshSkel/meshSkel/meshSkel.xcodeproj</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>fileBase</string>
+						<key>Type</key>
+						<string>String</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>String</key>
+								<string>text</string>
+							</dict>
+							<key>Selected</key>
+							<string>path</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>hfile</string>
+						<key>Type</key>
+						<string>FileName</string>
+						<key>Var</key>
+						<dict>
+							<key>Selected</key>
+							<string>hfile with retouched surfaces</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>External Program</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
+			<key>VariableName</key>
+			<string>[SOURCE] MESH SKELETONIZATION</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Application</key>
+				<string>$BUILD/Debug/segmentLocalizations</string>
+				<key>Argument</key>
+				<dict>
+					<key>Inline</key>
+					<dict>
+						<key>String</key>
+						<string></string>
+					</dict>
+					<key>SelectedNumber</key>
+					<integer>0</integer>
+				</dict>
+				<key>Communication</key>
+				<integer>1</integer>
+				<key>Input</key>
+				<string>Input.dtbin</string>
+				<key>ModuleName</key>
+				<string>Segment Localizations</string>
+				<key>Output</key>
+				<string>Output.dtbin</string>
+				<key>Project</key>
+				<string>segmentLocalizations/segmentLocalizations.xcodeproj</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>GEMS</string>
+						<key>Type</key>
+						<string>Array</string>
+						<key>Var</key>
+						<dict>
+							<key>Selected</key>
+							<string>GEMS localizations x,y,z,t,p,r,Ibg,Ipeak,SNR Transposed</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>hfile</string>
+						<key>Type</key>
+						<string>FileName</string>
+						<key>Var</key>
+						<dict>
+							<key>Selected</key>
+							<string>hfile</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>External Program</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
+			<key>VariableName</key>
+			<string>[SOURCE] localization segments</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Application</key>
+				<string>$BUILD/Debug/addTracksToHyphaFile</string>
+				<key>Argument</key>
+				<dict>
+					<key>Inline</key>
+					<dict>
+						<key>String</key>
+						<string></string>
+					</dict>
+					<key>SelectedNumber</key>
+					<integer>0</integer>
+				</dict>
+				<key>Communication</key>
+				<integer>1</integer>
+				<key>Input</key>
+				<string>Input.dtbin</string>
+				<key>ModuleName</key>
+				<string>Add Tracks to Hypha File</string>
+				<key>Output</key>
+				<string>Output.dtbin</string>
+				<key>Project</key>
+				<string>addTracksToHyphaFile/addTracksToHyphaFile.xcodeproj</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>nuclei</string>
+						<key>Type</key>
+						<string>Array</string>
+						<key>Var</key>
+						<dict>
+							<key>Selected</key>
+							<string>NO NUCLEI switcher</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>GEMS</string>
+						<key>Type</key>
+						<string>Array</string>
+						<key>Var</key>
+						<dict>
+							<key>Selected</key>
+							<string>track data (x, y, z, t, particle, r, seg) Transposed</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>hfile</string>
+						<key>Type</key>
+						<string>FileName</string>
+						<key>Var</key>
+						<dict>
+							<key>Selected</key>
+							<string>hfile</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>basePath</string>
+						<key>Type</key>
+						<string>String</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>String</key>
+								<string>text</string>
+							</dict>
+							<key>Selected</key>
+							<string>path</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>External Program</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
+			<key>VariableName</key>
+			<string>[SOURCE] Add nuclei and GEMS to Hypha</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>VariableName</key>
+			<string>DACollapser - 10 - Closed</string>
+			<key>VariableType</key>
+			<string>CollapserClose</string>
 		</dict>
 		<dict>
 			<key>VariableName</key>
@@ -132,52 +537,32 @@
 		<dict>
 			<key>Content</key>
 			<dict>
-				<key>Application</key>
-				<string>./Python/extractFN2.py</string>
-				<key>Argument</key>
+				<key>Text</key>
+				<string>-</string>
+			</dict>
+			<key>Selection</key>
+			<string>Specify</string>
+			<key>VariableName</key>
+			<string>marker</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>filename</key>
 				<dict>
-					<key>Inline</key>
-					<dict>
-						<key>String</key>
-						<string></string>
-					</dict>
 					<key>Selected</key>
 					<string>path and name</string>
 				</dict>
-				<key>Communication</key>
-				<integer>1</integer>
-				<key>Input</key>
-				<string>input.dtbin</string>
-				<key>Output</key>
-				<string>output.mat</string>
-				<key>Project</key>
-				<string></string>
-				<key>Variables</key>
-				<array>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>path and name</string>
-						<key>Type</key>
-						<string>String</string>
-						<key>Var</key>
-						<dict>
-							<key>Inline</key>
-							<dict>
-								<key>String</key>
-								<string>text</string>
-							</dict>
-							<key>Selected</key>
-							<string>path and name</string>
-						</dict>
-					</dict>
-				</array>
+				<key>marker</key>
+				<dict>
+					<key>Selected</key>
+					<string>marker</string>
+				</dict>
 			</dict>
 			<key>Selection</key>
-			<string>External Program</string>
-			<key>ToggleOpen</key>
-			<string>YES</string>
+			<string>Rstrip</string>
 			<key>VariableName</key>
 			<string>path</string>
 			<key>VariableType</key>
@@ -202,50 +587,34 @@
 		<dict>
 			<key>Content</key>
 			<dict>
-				<key>Application</key>
-				<string>../DataTankCode/extractFN2.py</string>
-				<key>Argument</key>
+				<key>Text</key>
+				<string>-</string>
+			</dict>
+			<key>Selection</key>
+			<string>Specify</string>
+			<key>VariableName</key>
+			<string>marker-2</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>filename</key>
 				<dict>
-					<key>Inline</key>
-					<dict>
-						<key>String</key>
-						<string></string>
-					</dict>
 					<key>Selected</key>
 					<string>Name of hfile</string>
 				</dict>
-				<key>Communication</key>
-				<integer>1</integer>
-				<key>Input</key>
-				<string>input.dtbin</string>
-				<key>Output</key>
-				<string>output.mat</string>
-				<key>Project</key>
-				<string></string>
-				<key>Variables</key>
-				<array>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>path and name</string>
-						<key>Type</key>
-						<string>String</string>
-						<key>Var</key>
-						<dict>
-							<key>Inline</key>
-							<dict>
-								<key>String</key>
-								<string>text</string>
-							</dict>
-							<key>Selected</key>
-							<string>Name of hfile</string>
-						</dict>
-					</dict>
-				</array>
+				<key>marker</key>
+				<dict>
+					<key>Selected</key>
+					<string>marker-2</string>
+				</dict>
 			</dict>
 			<key>Selection</key>
-			<string>External Program</string>
+			<string>Rstrip</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
 			<key>VariableName</key>
 			<string>path-2</string>
 			<key>VariableType</key>
@@ -513,6 +882,8 @@
 			</dict>
 			<key>Selection</key>
 			<string>From File Name</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
 			<key>VariableName</key>
 			<string>Name of hfile</string>
 			<key>VariableType</key>
@@ -580,6 +951,8 @@
 			</dict>
 			<key>Selection</key>
 			<string>Combine</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
 			<key>VariableName</key>
 			<string>meta data file name-2</string>
 			<key>VariableType</key>
@@ -596,6 +969,8 @@
 			</dict>
 			<key>Selection</key>
 			<string>From String</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
 			<key>VariableName</key>
 			<string>video metadata file</string>
 			<key>VariableType</key>
@@ -604,92 +979,21 @@
 		<dict>
 			<key>Content</key>
 			<dict>
-				<key>Application</key>
-				<string>$BUILD/Debug/getVideoMetadata</string>
-				<key>Argument</key>
+				<key>mdfile</key>
 				<dict>
 					<key>Inline</key>
 					<dict>
-						<key>String</key>
+						<key>Text</key>
 						<string></string>
 					</dict>
-					<key>SelectedNumber</key>
-					<integer>0</integer>
+					<key>Selected</key>
+					<string>video metadata file</string>
 				</dict>
-				<key>Communication</key>
-				<integer>1</integer>
-				<key>GroupName</key>
-				<string>DT_RetGroup</string>
-				<key>GroupStructure</key>
-				<array>
-					<dict>
-						<key>Name</key>
-						<string>dt</string>
-						<key>Type</key>
-						<string>Real Number</string>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>dxy</string>
-						<key>Type</key>
-						<string>Real Number</string>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>dz</string>
-						<key>Type</key>
-						<string>Real Number</string>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>NF</string>
-						<key>Type</key>
-						<string>Real Number</string>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Nx</string>
-						<key>Type</key>
-						<string>Real Number</string>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Ny</string>
-						<key>Type</key>
-						<string>Real Number</string>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Nz</string>
-						<key>Type</key>
-						<string>Real Number</string>
-					</dict>
-				</array>
-				<key>Input</key>
-				<string>Input.dtbin</string>
-				<key>Output</key>
-				<string>Output.dtbin</string>
-				<key>Project</key>
-				<string>getVideoMetadata/getVideoMetadata.xcodeproj</string>
-				<key>Variables</key>
-				<array>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>mdfile</string>
-						<key>Type</key>
-						<string>FileName</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>video metadata file</string>
-						</dict>
-					</dict>
-				</array>
 			</dict>
 			<key>Selection</key>
-			<string>External Program</string>
+			<string>Get Video Metadata</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
 			<key>VariableName</key>
 			<string>Group</string>
 			<key>VariableType</key>
@@ -1351,63 +1655,19 @@
 		<dict>
 			<key>Content</key>
 			<dict>
-				<key>Application</key>
-				<string>$BUILD/Debug/meshGen</string>
-				<key>Argument</key>
+				<key>fileBase</key>
 				<dict>
-					<key>Inline</key>
-					<dict>
-						<key>String</key>
-						<string></string>
-					</dict>
-					<key>SelectedNumber</key>
-					<integer>0</integer>
+					<key>Selected</key>
+					<string>path</string>
 				</dict>
-				<key>Communication</key>
-				<integer>1</integer>
-				<key>Input</key>
-				<string>Input.dtbin</string>
-				<key>Output</key>
-				<string>Output.dtbin</string>
-				<key>Project</key>
-				<string>meshGen/meshGen.xcodeproj</string>
-				<key>Variables</key>
-				<array>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>pointsWithSegments</string>
-						<key>Type</key>
-						<string>Array</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>points with segments mapped</string>
-						</dict>
-					</dict>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>fileBase</string>
-						<key>Type</key>
-						<string>String</string>
-						<key>Var</key>
-						<dict>
-							<key>Inline</key>
-							<dict>
-								<key>String</key>
-								<string>text</string>
-							</dict>
-							<key>Selected</key>
-							<string>path</string>
-						</dict>
-					</dict>
-				</array>
+				<key>pointsWithSegments</key>
+				<dict>
+					<key>Selected</key>
+					<string>points with segments mapped</string>
+				</dict>
 			</dict>
 			<key>Selection</key>
-			<string>External Program</string>
+			<string>Surface Mesh Round 1</string>
 			<key>ToggleOpen</key>
 			<string>YES</string>
 			<key>VariableName</key>
@@ -1429,7 +1689,7 @@
 		</dict>
 		<dict>
 			<key>State</key>
-			<string>Closed</string>
+			<string>Open</string>
 			<key>Title</key>
 			<string>Mesh skeletonization</string>
 			<key>VariableName</key>
@@ -1523,63 +1783,24 @@
 		<dict>
 			<key>Content</key>
 			<dict>
-				<key>Application</key>
-				<string>$BUILD/Debug/meshSkel</string>
-				<key>Argument</key>
+				<key>fileBase</key>
+				<dict>
+					<key>Selected</key>
+					<string>path</string>
+				</dict>
+				<key>hfile</key>
 				<dict>
 					<key>Inline</key>
 					<dict>
-						<key>String</key>
+						<key>Text</key>
 						<string></string>
 					</dict>
-					<key>SelectedNumber</key>
-					<integer>0</integer>
+					<key>Selected</key>
+					<string>hfile with retouched surfaces</string>
 				</dict>
-				<key>Communication</key>
-				<integer>1</integer>
-				<key>Input</key>
-				<string>Input.dtbin</string>
-				<key>Output</key>
-				<string>Output.dtbin</string>
-				<key>Project</key>
-				<string>meshSkel/meshSkel.xcodeproj</string>
-				<key>Variables</key>
-				<array>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>fileBase</string>
-						<key>Type</key>
-						<string>String</string>
-						<key>Var</key>
-						<dict>
-							<key>Inline</key>
-							<dict>
-								<key>String</key>
-								<string>text</string>
-							</dict>
-							<key>Selected</key>
-							<string>path</string>
-						</dict>
-					</dict>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>hfile</string>
-						<key>Type</key>
-						<string>FileName</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>hfile with retouched surfaces</string>
-						</dict>
-					</dict>
-				</array>
 			</dict>
 			<key>Selection</key>
-			<string>External Program</string>
+			<string>Mesh Skeletonization</string>
 			<key>ToggleOpen</key>
 			<string>YES</string>
 			<key>VariableName</key>
@@ -1650,30 +1871,7 @@
 			<key>Selection</key>
 			<string>Combine</string>
 			<key>VariableName</key>
-			<string>hyphaname 2</string>
-			<key>VariableType</key>
-			<string>String</string>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>FirstVariable</key>
-				<dict>
-					<key>Selected</key>
-					<string>MESH SKELETONIZATION</string>
-				</dict>
-				<key>SecondVariable</key>
-				<dict>
-					<key>Selected</key>
-					<string>hyphaname 2</string>
-				</dict>
-				<key>Which</key>
-				<integer>0</integer>
-			</dict>
-			<key>Selection</key>
-			<string>Toggle</string>
-			<key>VariableName</key>
-			<string>REDO HYPHA MESH</string>
+			<string>BYPASS Skelotonization</string>
 			<key>VariableType</key>
 			<string>String</string>
 		</dict>
@@ -1777,7 +1975,7 @@
 		</dict>
 		<dict>
 			<key>State</key>
-			<string>Closed</string>
+			<string>Open</string>
 			<key>Title</key>
 			<string>Nuclei</string>
 			<key>VariableName</key>
@@ -1788,8 +1986,33 @@
 		<dict>
 			<key>Content</key>
 			<dict>
+				<key>FirstVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>nucleiData out</string>
+				</dict>
+				<key>SecondVariable</key>
+				<dict>
+					<key>Selected</key>
+					<string>Rows from red channel nuclei Combined Transposed</string>
+				</dict>
+				<key>Which</key>
+				<integer>1</integer>
+			</dict>
+			<key>Selection</key>
+			<string>Toggle</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
+			<key>VariableName</key>
+			<string>nuclei source switcher</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
 				<key>Text</key>
-				<string> (MCMC)(nuclei).csv</string>
+				<string> (nuclei).csv</string>
 			</dict>
 			<key>Selection</key>
 			<string>Specify</string>
@@ -1947,8 +2170,6 @@
 			</dict>
 			<key>Selection</key>
 			<string>Map Rows or Columns</string>
-			<key>ToggleOpen</key>
-			<string>YES</string>
 			<key>VariableName</key>
 			<string>nucleiData mapped</string>
 			<key>VariableType</key>
@@ -2006,37 +2227,180 @@
 			<real>246</real>
 		</dict>
 		<dict>
+			<key>Content</key>
+			<dict>
+				<key>File</key>
+				<dict>
+					<key>Inline</key>
+					<dict>
+						<key>Text</key>
+						<string></string>
+					</dict>
+					<key>Selected</key>
+					<string>nuclei data file</string>
+				</dict>
+				<key>Header</key>
+				<string>1</string>
+				<key>RunConversion</key>
+				<string>Off</string>
+				<key>Script</key>
+				<string>Conversion-1</string>
+				<key>Tail</key>
+				<string>0</string>
+				<key>ViewSize</key>
+				<integer>0</integer>
+			</dict>
+			<key>Selection</key>
+			<string>From File</string>
+			<key>VariableName</key>
+			<string>red channel nuclei</string>
+			<key>VariableType</key>
+			<string>Array</string>
+			<key>ViewHeight</key>
+			<real>216</real>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Array</key>
+				<dict>
+					<key>Selected</key>
+					<string>red channel nuclei</string>
+				</dict>
+				<key>Subscripts</key>
+				<dict>
+					<key>Inline</key>
+					<dict>
+						<key>Text</key>
+						<string>6,7,1,8,1,2</string>
+					</dict>
+					<key>SelectedNumber</key>
+					<integer>0</integer>
+				</dict>
+			</dict>
+			<key>Selection</key>
+			<string>Extract Rows</string>
+			<key>VariableName</key>
+			<string>Rows from red channel nuclei</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Array</key>
+				<dict>
+					<key>Selected</key>
+					<string>Rows from red channel nuclei</string>
+				</dict>
+				<key>Expressions</key>
+				<array>
+					<string>v1/dxy</string>
+					<string>v2/dxy</string>
+					<string>(Nz/2)*zs</string>
+					<string>v4</string>
+					<string>v5</string>
+					<string>0.0</string>
+					<string></string>
+				</array>
+				<key>RowOrColumn</key>
+				<integer>0</integer>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>dxy</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>dxy-2</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>Nz</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>Nz-2</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>zs</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>zscale factor-2</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>Map Rows or Columns</string>
+			<key>VariableName</key>
+			<string>Rows from red channel nuclei Combined</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Array</key>
+				<dict>
+					<key>Selected</key>
+					<string>Rows from red channel nuclei Combined</string>
+				</dict>
+			</dict>
+			<key>Selection</key>
+			<string>Transpose</string>
+			<key>VariableName</key>
+			<string>Rows from red channel nuclei Combined Transposed</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
 			<key>VariableName</key>
 			<string>DACollapser - 2 - Closed</string>
 			<key>VariableType</key>
 			<string>CollapserClose</string>
 		</dict>
 		<dict>
-			<key>Content</key>
-			<dict>
-				<key>FirstVariable</key>
-				<dict>
-					<key>Selected</key>
-					<string>nucleiData out</string>
-				</dict>
-				<key>SecondVariable</key>
-				<dict>
-					<key>Selected</key>
-					<string>NO NUCLEI</string>
-				</dict>
-				<key>Which</key>
-				<integer>1</integer>
-			</dict>
-			<key>Selection</key>
-			<string>Toggle</string>
-			<key>VariableName</key>
-			<string>NO NUCLEI switcher</string>
-			<key>VariableType</key>
-			<string>Array</string>
-		</dict>
-		<dict>
 			<key>State</key>
-			<string>Closed</string>
+			<string>Open</string>
 			<key>Title</key>
 			<string>Localizations GEMS ----- NEED RADIUS</string>
 			<key>VariableName</key>
@@ -2173,7 +2537,7 @@
 					<key>Inline</key>
 					<dict>
 						<key>Text</key>
-						<string>2,3,4,5,6,7</string>
+						<string>2,3,4,5,6,7,8,9,10</string>
 					</dict>
 					<key>SelectedNumber</key>
 					<integer>0</integer>
@@ -2182,7 +2546,7 @@
 			<key>Selection</key>
 			<string>Extract Rows</string>
 			<key>VariableName</key>
-			<string>GEMS localizations x,y,z,t,p,r</string>
+			<string>GEMS localizations x,y,z,t,p,r,Ibg,Ipeak,SNR</string>
 			<key>VariableType</key>
 			<string>Array</string>
 		</dict>
@@ -2192,7 +2556,7 @@
 				<key>Array</key>
 				<dict>
 					<key>Selected</key>
-					<string>GEMS localizations x,y,z,t,p,r</string>
+					<string>GEMS localizations x,y,z,t,p,r,Ibg,Ipeak,SNR</string>
 				</dict>
 				<key>Expressions</key>
 				<array>
@@ -2202,6 +2566,9 @@
 					<string>v4</string>
 					<string>v5</string>
 					<string>v6</string>
+					<string>v7</string>
+					<string>v8</string>
+					<string>v9</string>
 					<string></string>
 				</array>
 				<key>RowOrColumn</key>
@@ -2249,67 +2616,31 @@
 			<key>Selection</key>
 			<string>Transpose</string>
 			<key>VariableName</key>
-			<string>GEMS localizations x,y,z,t,p,r Transposed</string>
+			<string>GEMS localizations x,y,z,t,p,r,Ibg,Ipeak,SNR Transposed</string>
 			<key>VariableType</key>
 			<string>Array</string>
 		</dict>
 		<dict>
 			<key>Content</key>
 			<dict>
-				<key>Application</key>
-				<string>$BUILD/Debug/segmentLocalizations</string>
-				<key>Argument</key>
+				<key>GEMS</key>
+				<dict>
+					<key>Selected</key>
+					<string>GEMS localizations x,y,z,t,p,r,Ibg,Ipeak,SNR Transposed</string>
+				</dict>
+				<key>hfile</key>
 				<dict>
 					<key>Inline</key>
 					<dict>
-						<key>String</key>
+						<key>Text</key>
 						<string></string>
 					</dict>
-					<key>SelectedNumber</key>
-					<integer>0</integer>
+					<key>Selected</key>
+					<string>hfile</string>
 				</dict>
-				<key>Communication</key>
-				<integer>1</integer>
-				<key>Input</key>
-				<string>Input.dtbin</string>
-				<key>Output</key>
-				<string>Output.dtbin</string>
-				<key>Project</key>
-				<string>segmentLocalizations/segmentLocalizations.xcodeproj</string>
-				<key>Variables</key>
-				<array>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>GEMS</string>
-						<key>Type</key>
-						<string>Array</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>GEMS localizations x,y,z,t,p,r Transposed</string>
-						</dict>
-					</dict>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>hfile</string>
-						<key>Type</key>
-						<string>FileName</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>hfile</string>
-						</dict>
-					</dict>
-				</array>
 			</dict>
 			<key>Selection</key>
-			<string>External Program</string>
-			<key>ToggleOpen</key>
-			<string>YES</string>
+			<string>Segment Localizations</string>
 			<key>VariableName</key>
 			<string>localization segments</string>
 			<key>VariableType</key>
@@ -2432,8 +2763,169 @@
 		<dict>
 			<key>Content</key>
 			<dict>
+				<key>Formula</key>
+				<string>1.*0.1833333/dxy</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>dxy</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>dxy-2</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>Expression</string>
+			<key>VariableName</key>
+			<string>sigma (Linking)</string>
+			<key>VariableType</key>
+			<string>Real Number</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Formula</key>
+				<string>3*0.1833334/dxy</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>dxy</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>dxy-2</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>Expression</string>
+			<key>VariableName</key>
+			<string>Nuclei radius threshold</string>
+			<key>VariableType</key>
+			<string>Real Number</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Formula</key>
+				<string>9999999999</string>
+				<key>Variables</key>
+				<array/>
+			</dict>
+			<key>Selection</key>
+			<string>Expression</string>
+			<key>VariableName</key>
+			<string>No filtering</string>
+			<key>VariableType</key>
+			<string>Real Number</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Array</key>
+				<dict>
+					<key>Selected</key>
+					<string>ground truth tracks (testing only)</string>
+				</dict>
+			</dict>
+			<key>Selection</key>
+			<string>Transpose</string>
+			<key>VariableName</key>
+			<string>ground truth tracks (testing only) Transposed</string>
+			<key>VariableType</key>
+			<string>Array</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Formula</key>
+				<string>dtslice/dt</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>dtslice</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>.047</string>
+							</dict>
+							<key>SelectedNumber</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>dt</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>dt-2</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>Expression</string>
+			<key>ToggleOpen</key>
+			<string>YES</string>
+			<key>VariableName</key>
+			<string>slice scale</string>
+			<key>VariableType</key>
+			<string>Real Number</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
 				<key>Application</key>
-				<string>Python/segmentedTracking.py</string>
+				<string>segmentedTracking/segmentedTrackingNew.py</string>
 				<key>Argument</key>
 				<dict>
 					<key>Inline</key>
@@ -2451,7 +2943,7 @@
 				<key>Output</key>
 				<string>Output.mat</string>
 				<key>Project</key>
-				<string>Python/</string>
+				<string>segmentedTracking/</string>
 				<key>Variables</key>
 				<array>
 					<dict>
@@ -2464,7 +2956,7 @@
 						<key>Var</key>
 						<dict>
 							<key>Selected</key>
-							<string>GEMS localizations x,y,z,t,p,r Transposed</string>
+							<string>GEMS localizations x,y,z,t,p,r,Ibg,Ipeak,SNR Transposed</string>
 						</dict>
 					</dict>
 					<dict>
@@ -2494,10 +2986,130 @@
 							<key>Inline</key>
 							<dict>
 								<key>Number</key>
-								<string>800.0</string>
+								<string>4</string>
+							</dict>
+							<key>Selected</key>
+							<string>Rmax switcher</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>zscale</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>zscale factor</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>sigma</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>1.33</string>
+							</dict>
+							<key>Selected</key>
+							<string>sigma (Linking)</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>Imax</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>140</string>
 							</dict>
 							<key>SelectedNumber</key>
 							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>dt</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>dt-2</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>dxy</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>dxy-2</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>sliceScale</string>
+						<key>Number Type</key>
+						<integer>0</integer>
+						<key>Type</key>
+						<string>Real Number</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>Number</key>
+								<string>0</string>
+							</dict>
+							<key>Selected</key>
+							<string>slice scale</string>
 						</dict>
 					</dict>
 				</array>
@@ -2514,10 +3126,126 @@
 		<dict>
 			<key>Content</key>
 			<dict>
+				<key>Text</key>
+				<string> (ground truth tracks).csv</string>
+			</dict>
+			<key>Selection</key>
+			<string>Specify</string>
+			<key>VariableName</key>
+			<string>unfiltered modifier string-2-2</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>Digits</key>
+				<string>6</string>
+				<key>Expression</key>
+				<string>%@%@</string>
+				<key>Variables</key>
+				<array>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>path and name</string>
+						<key>Type</key>
+						<string>String</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>String</key>
+								<string>text</string>
+							</dict>
+							<key>Selected</key>
+							<string>path</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>Include</key>
+						<string>On</string>
+						<key>Name</key>
+						<string>String</string>
+						<key>Type</key>
+						<string>String</string>
+						<key>Var</key>
+						<dict>
+							<key>Inline</key>
+							<dict>
+								<key>String</key>
+								<string>text</string>
+							</dict>
+							<key>Selected</key>
+							<string>unfiltered modifier string-2-2</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+			<key>Selection</key>
+			<string>Combine</string>
+			<key>VariableName</key>
+			<string>track data file name-2-2-2</string>
+			<key>VariableType</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>String</key>
+				<dict>
+					<key>Selected</key>
+					<string>track data file name-2-2-2</string>
+				</dict>
+			</dict>
+			<key>Selection</key>
+			<string>From String</string>
+			<key>VariableName</key>
+			<string>track data file-2-2-2</string>
+			<key>VariableType</key>
+			<string>FileName</string>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>File</key>
+				<dict>
+					<key>Inline</key>
+					<dict>
+						<key>Text</key>
+						<string></string>
+					</dict>
+					<key>Selected</key>
+					<string>track data file-2-2-2</string>
+				</dict>
+				<key>Header</key>
+				<string>1</string>
+				<key>RunConversion</key>
+				<string>Off</string>
+				<key>Script</key>
+				<string>Conversion-4</string>
+				<key>Tail</key>
+				<string>0</string>
+				<key>ViewSize</key>
+				<integer>0</integer>
+			</dict>
+			<key>Selection</key>
+			<string>From File</string>
+			<key>VariableName</key>
+			<string>ground truth tracks (testing only)</string>
+			<key>VariableType</key>
+			<string>Array</string>
+			<key>ViewHeight</key>
+			<real>216</real>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
 				<key>Array</key>
 				<dict>
 					<key>Selected</key>
-					<string>track data with segments-retracked</string>
+					<string>tracks switcher</string>
 				</dict>
 				<key>Subscripts</key>
 				<dict>
@@ -2543,14 +3271,14 @@
 				<key>Array</key>
 				<dict>
 					<key>Selected</key>
-					<string>track data with segments-retracked</string>
+					<string>tracks switcher</string>
 				</dict>
 				<key>Subscripts</key>
 				<dict>
 					<key>Inline</key>
 					<dict>
 						<key>Text</key>
-						<string>7</string>
+						<string>6</string>
 					</dict>
 					<key>SelectedNumber</key>
 					<integer>0</integer>
@@ -2601,7 +3329,7 @@
 				<key>Array</key>
 				<dict>
 					<key>Selected</key>
-					<string>track data with segments-retracked</string>
+					<string>tracks switcher</string>
 				</dict>
 				<key>Expressions</key>
 				<array>
@@ -2643,7 +3371,7 @@
 			<key>Selection</key>
 			<string>Map Rows or Columns</string>
 			<key>VariableName</key>
-			<string>track data with segments-retracked mapped</string>
+			<string>track data (x, y, z, t, particle, r, seg)</string>
 			<key>VariableType</key>
 			<string>Array</string>
 		</dict>
@@ -2653,13 +3381,13 @@
 				<key>Array</key>
 				<dict>
 					<key>Selected</key>
-					<string>track data with segments-retracked mapped</string>
+					<string>track data (x, y, z, t, particle, r, seg)</string>
 				</dict>
 			</dict>
 			<key>Selection</key>
 			<string>Transpose</string>
 			<key>VariableName</key>
-			<string>track data with segments-retracked Transposed</string>
+			<string>track data (x, y, z, t, particle, r, seg) Transposed</string>
 			<key>VariableType</key>
 			<string>Array</string>
 		</dict>
@@ -2694,89 +3422,34 @@
 		<dict>
 			<key>Content</key>
 			<dict>
-				<key>Application</key>
-				<string>$BUILD/Debug/addTracksToHyphaFile</string>
-				<key>Argument</key>
+				<key>GEMS</key>
+				<dict>
+					<key>Selected</key>
+					<string>track data (x, y, z, t, particle, r, seg) Transposed</string>
+				</dict>
+				<key>basePath</key>
+				<dict>
+					<key>Selected</key>
+					<string>path</string>
+				</dict>
+				<key>hfile</key>
 				<dict>
 					<key>Inline</key>
 					<dict>
-						<key>String</key>
+						<key>Text</key>
 						<string></string>
 					</dict>
-					<key>SelectedNumber</key>
-					<integer>0</integer>
+					<key>Selected</key>
+					<string>hfile</string>
 				</dict>
-				<key>Communication</key>
-				<integer>1</integer>
-				<key>Input</key>
-				<string>Input.dtbin</string>
-				<key>Output</key>
-				<string>Output.dtbin</string>
-				<key>Project</key>
-				<string>addTracksToHyphaFile/addTracksToHyphaFile.xcodeproj</string>
-				<key>Variables</key>
-				<array>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>nuclei</string>
-						<key>Type</key>
-						<string>Array</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>NO NUCLEI switcher</string>
-						</dict>
-					</dict>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>GEMS</string>
-						<key>Type</key>
-						<string>Array</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>track data with segments-retracked Transposed</string>
-						</dict>
-					</dict>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>hfile</string>
-						<key>Type</key>
-						<string>FileName</string>
-						<key>Var</key>
-						<dict>
-							<key>Selected</key>
-							<string>hfile</string>
-						</dict>
-					</dict>
-					<dict>
-						<key>Include</key>
-						<string>On</string>
-						<key>Name</key>
-						<string>basePath</string>
-						<key>Type</key>
-						<string>String</string>
-						<key>Var</key>
-						<dict>
-							<key>Inline</key>
-							<dict>
-								<key>String</key>
-								<string>text</string>
-							</dict>
-							<key>Selected</key>
-							<string>path</string>
-						</dict>
-					</dict>
-				</array>
+				<key>nuclei</key>
+				<dict>
+					<key>Selected</key>
+					<string>NO NUCLEI switcher</string>
+				</dict>
 			</dict>
 			<key>Selection</key>
-			<string>External Program</string>
+			<string>Add Tracks to Hypha File</string>
 			<key>ToggleOpen</key>
 			<string>YES</string>
 			<key>VariableName</key>
@@ -2856,68 +3529,68 @@
 				<key>MaxX</key>
 				<dict>
 					<key>CurrentValue</key>
-					<real>660</real>
+					<real>1200</real>
 					<key>MaxValue</key>
-					<real>660</real>
+					<real>1200</real>
 					<key>MinValue</key>
 					<real>0.0</real>
 					<key>String</key>
-					<string></string>
+					<string>1200</string>
 				</dict>
 				<key>MaxY</key>
 				<dict>
 					<key>CurrentValue</key>
-					<real>612</real>
+					<real>1200</real>
 					<key>MaxValue</key>
-					<real>612</real>
+					<real>1200</real>
 					<key>MinValue</key>
 					<real>0.0</real>
 					<key>String</key>
-					<string></string>
+					<string>1200</string>
 				</dict>
 				<key>MaxZ</key>
 				<dict>
 					<key>CurrentValue</key>
-					<real>18.545454419841452</real>
+					<real>30.827072954546207</real>
 					<key>MaxValue</key>
-					<real>18.545454419841452</real>
+					<real>30.827072954546207</real>
 					<key>MinValue</key>
 					<real>0.0</real>
 					<key>String</key>
-					<string></string>
+					<string>30.827072954546</string>
 				</dict>
 				<key>MinX</key>
 				<dict>
 					<key>CurrentValue</key>
 					<real>0.0</real>
 					<key>MaxValue</key>
-					<real>660</real>
+					<real>1200</real>
 					<key>MinValue</key>
 					<real>0.0</real>
 					<key>String</key>
-					<string></string>
+					<string>0</string>
 				</dict>
 				<key>MinY</key>
 				<dict>
 					<key>CurrentValue</key>
 					<real>0.0</real>
 					<key>MaxValue</key>
-					<real>612</real>
+					<real>1200</real>
 					<key>MinValue</key>
 					<real>0.0</real>
 					<key>String</key>
-					<string></string>
+					<string>0</string>
 				</dict>
 				<key>MinZ</key>
 				<dict>
 					<key>CurrentValue</key>
 					<real>0.0</real>
 					<key>MaxValue</key>
-					<real>18.545454419841452</real>
+					<real>30.827072954546207</real>
 					<key>MinValue</key>
 					<real>0.0</real>
 					<key>String</key>
-					<string></string>
+					<string>0</string>
 				</dict>
 				<key>RegionFrom</key>
 				<dict>
@@ -2955,10 +3628,10 @@
 	</array>
 	<key>WindowPosition</key>
 	<array>
-		<real>0.0</real>
-		<real>0.0</real>
-		<real>512</real>
-		<real>1418</real>
+		<real>1981</real>
+		<real>261</real>
+		<real>941</real>
+		<real>1417</real>
 	</array>
 </dict>
 </plist>

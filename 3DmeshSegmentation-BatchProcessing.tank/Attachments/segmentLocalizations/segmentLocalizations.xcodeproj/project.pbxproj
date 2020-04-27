@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03D207A520EFB6C700D70CA3 /* Hypha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03D207A420EFB6C700D70CA3 /* Hypha.cpp */; };
+		036663BA20641D7D00FB7FB0 /* Hypha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 036663B820641D7D00FB7FB0 /* Hypha.cpp */; };
 		6340D9D11926661200C9DA99 /* DTMesh3DOnDisk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6340D9CF1926661200C9DA99 /* DTMesh3DOnDisk.cpp */; };
 		634AAB911ECE24220062D7AE /* DTSeriesVectorCollection2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634AAB8F1ECE24220062D7AE /* DTSeriesVectorCollection2D.cpp */; };
 		634AAB941ECE24580062D7AE /* DTTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634AAB921ECE24580062D7AE /* DTTable.cpp */; };
@@ -178,8 +178,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03D207A320EFB6C700D70CA3 /* Hypha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypha.h; path = ../../../../Hypha/Hypha.h; sourceTree = "<group>"; };
-		03D207A420EFB6C700D70CA3 /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hypha.cpp; path = ../../../../Hypha/Hypha.cpp; sourceTree = "<group>"; };
+		036663B820641D7D00FB7FB0 /* Hypha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hypha.cpp; path = ../../../../meshSkel/meshSkel/meshSkel/Hypha.cpp; sourceTree = "<group>"; };
+		036663B920641D7D00FB7FB0 /* Hypha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypha.h; path = ../../../../meshSkel/meshSkel/meshSkel/Hypha.h; sourceTree = "<group>"; };
 		6340D9CF1926661200C9DA99 /* DTMesh3DOnDisk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DTMesh3DOnDisk.cpp; sourceTree = "<group>"; };
 		6340D9D01926661200C9DA99 /* DTMesh3DOnDisk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTMesh3DOnDisk.h; sourceTree = "<group>"; };
 		634AAB8F1ECE24220062D7AE /* DTSeriesVectorCollection2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DTSeriesVectorCollection2D.cpp; sourceTree = "<group>"; };
@@ -536,9 +536,9 @@
 		63D8635C156D2DD2004440D9 /* segmentLocalizations */ = {
 			isa = PBXGroup;
 			children = (
-				03D207A420EFB6C700D70CA3 /* Hypha.cpp */,
-				03D207A320EFB6C700D70CA3 /* Hypha.h */,
 				63D8635D156D2DD2004440D9 /* main.cpp */,
+				036663B820641D7D00FB7FB0 /* Hypha.cpp */,
+				036663B920641D7D00FB7FB0 /* Hypha.h */,
 				63D8635F156D2DD2004440D9 /* segmentLocalizations.1 */,
 			);
 			path = segmentLocalizations;
@@ -1192,7 +1192,7 @@
 				63D8654A156D3622004440D9 /* DTVectorCollection3D.cpp in Sources */,
 				63D8654B156D3622004440D9 /* DTVectorField3D.cpp in Sources */,
 				63D8654C156D3622004440D9 /* DTFunction.cpp in Sources */,
-				03D207A520EFB6C700D70CA3 /* Hypha.cpp in Sources */,
+				036663BA20641D7D00FB7FB0 /* Hypha.cpp in Sources */,
 				63D8654D156D3622004440D9 /* DTFunctionFit.cpp in Sources */,
 				63D8654E156D3622004440D9 /* DTMask.cpp in Sources */,
 				6340D9D11926661200C9DA99 /* DTMesh3DOnDisk.cpp in Sources */,
@@ -1250,6 +1250,7 @@
 		63D86364156D2DD2004440D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1258,6 +1259,7 @@
 		63D86365156D2DD2004440D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

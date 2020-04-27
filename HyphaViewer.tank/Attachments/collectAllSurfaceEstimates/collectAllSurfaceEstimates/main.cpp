@@ -4,6 +4,7 @@
 #include "DTSaveError.h"
 
 #include "DTDataFile.h"
+#include "DTMatlabDataFile.h"
 #include "DTDoubleArray.h"
 #include "DTFile.h"
 
@@ -15,9 +16,10 @@
 #include "DTDictionary.h"
 #include "DTDataFile.h"
 #include "DTSeriesGroup.h"
+#include "DTSeriesArray.h"
 #include <math.h>
 
-DTDoubleArray Computation(double sigma,double NF,double window,double range,DTFile hfile);
+DTDoubleArray Computation(double sigma,double NF,double window,double range,DTFile hfile, string baseName);
 
 int main(int argc,const char *argv[])
 {
@@ -30,11 +32,12 @@ int main(int argc,const char *argv[])
     double window = inputFile.ReadNumber("window");
     double range = inputFile.ReadNumber("range");
     DTFile hfile("hfile",DTFile::ReadOnly);
-
+    string baseName = inputFile.ReadString("baseName");
+    
     // The computation.
     DTDoubleArray computed;
     clock_t t_before = clock();
-    computed = Computation(sigma,NF,window,range,hfile);
+    computed = Computation(sigma,NF,window,range,hfile,baseName);
     clock_t t_after = clock();
     double exec_time = double(t_after-t_before)/double(CLOCKS_PER_SEC);
 
@@ -58,7 +61,7 @@ int main(int argc,const char *argv[])
     return 0;
 }
 
-DTDoubleArray Computation(double sigma,double NF,double window,double range,DTFile hfile)
+DTDoubleArray Computation(double sigma,double NF,double window,double range,DTFile hfile, string baseName)
 {
     DTDataFile inputFile(hfile);
     DTSeriesGroup<Hypha> S(inputFile, "Var");
@@ -68,12 +71,16 @@ DTDoubleArray Computation(double sigma,double NF,double window,double range,DTFi
         Hypha h = S.Get(s);
         Npoints += h.surface.NumberOfPoints();
     }
+    //string soutName = baseName + "-diffusivityData.mat";
+    //DTMatlabDataFile seriesOutput(soutName, DTFile::NewReadWrite);
+    //DTSeriesArray S2(seriesOutput, "Var");
     DTMutableDoubleArray values(NF, Npoints);
     int Pcount = 0;
     for (int s=0; s<Nsegs;s++) {
         Hypha h = S.Get(s);
         int Np = h.surface.NumberOfPoints();
         DTDoubleArray vals = diffusivitySurfaceMap(h, window, s, NF, sigma, range);
+        //S2.Add(vals, s);
         for (int n=0; n<Np; n++) {
             for (int t=0; t<NF; t++) {
                 values(t, Pcount + n) = vals(t, n);
@@ -81,5 +88,6 @@ DTDoubleArray Computation(double sigma,double NF,double window,double range,DTFi
         }
         Pcount += Np;
     }
+    //seriesOutput.SaveIndex();
     return values;
 }

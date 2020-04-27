@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../meshSkel/meshSkel/meshSkel/Hypha.cpp"
-            timestampString = "547149069.925741"
+            timestampString = "581388724.100273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "298"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../meshSkel/meshSkel/meshSkel/Hypha.cpp"
-            timestampString = "547149069.926039"
+            timestampString = "581388724.10032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "307"
@@ -42,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../meshSkel/meshSkel/meshSkel/Hypha.cpp"
-            timestampString = "547149069.926223"
+            timestampString = "581388724.100354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "312"
             endingLineNumber = "312"
             landmarkName = "segmentPoints(const std::list&lt;Hypha&gt; &amp;H, const DTDoubleArray &amp;points)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "collectAllSurfaceEstimates/main.cpp"
+            timestampString = "581388724.100386"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "Computation(double sigma,double NF,double window,double range,DTFile hfile, string baseName)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Inputs</key>
+		<array>
+			<dict>
+				<key>Extra</key>
+				<dict>
+					<key>Text</key>
+					<string>GEMS-grace_fpsTest2_9_13_19/GEMS_1um001.nd2.tif</string>
+				</dict>
+				<key>Name</key>
+				<string>Time value of video volume file</string>
+				<key>Type</key>
+				<string>FileName</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>external output</string>
+		<key>Type</key>
+		<string>String</string>
+	</dict>
+</array>
+</plist>

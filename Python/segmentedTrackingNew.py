@@ -8,13 +8,14 @@ import scipy
 from scipy.io import savemat, loadmat
 import sys
 
-import NetTracker as NT
-from NetTracker.TrackingData import TrackingData
-from lap import lapmod
+#import NetTracker as NT
+#from NetTracker.TrackingData import TrackingData
+
+from lap import lapmod # available using pip
 
 import pandas as pd
 
-import datatank_py
+import datatank_py # see the readme
 from datatank_py.DTDataFile import DTDataFile
 from datatank_py.DTProgress import DTProgress
 from datatank_py.DTSeries import DTSeriesGroup
@@ -76,16 +77,19 @@ class SparseArrayFloat32:
         return float64(vals), kk, first
 
 def filterAggs():
-    """Filter large, bright localizations from the set of detections."""
+    """Warning: this function contains a bit of code that needs to be rewritten. Filter large, bright localizations from the set of detections."""
     GEMStracks = pd.DataFrame(
         [],
         columns=['x', 'y', 'z', 'frame', 'particle' 'segment', 'r', 'Ipeak'])
     np = 0
     gp = 0
     for s, g in detections.groupby('segment'):
+        ##########################################
+        ## Old code that needs to be rewritten with the lap package
         GEMS = TrackingData(shape=vidshape, zscale=1.)
         GEMS.setDetections(g)
         GEMS.linkParticles(D=1.0)
+        ##########################################
         GEMS.Data.particle += gp
         GEMS.Data = GEMS.Data.assign(segment=s)
         numParticles = GEMS.Data.particle.max()

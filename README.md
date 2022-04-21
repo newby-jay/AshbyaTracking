@@ -14,3 +14,7 @@ and Python (mostly Python 2.7) and uses widely available open libraries.
   - Scipy, Numpy, Matplotlib
   - Pandas
   - Jupyter
+
+
+Python package for working with DataTank data files
+https://github.com/amaxwell/datatank_py
